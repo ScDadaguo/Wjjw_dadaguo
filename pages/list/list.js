@@ -27,7 +27,7 @@ Component({
       console.log("在组件实例刚刚被创建时执行")
       var that = this;
       wx.request({
-        url: 'http://127.0.0.1:8081/listWjjw',
+        url: 'http://127.0.0.1:8081/listWjjw?openId='+app.globalData.openId,
         method: 'get',
         data: {},
         success: function (res) {

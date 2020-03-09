@@ -7,6 +7,7 @@ Component({
     addGlobalClass: true,
   },
   data: {
+    openId:'',
     PageCur: 'component',
     id: '',
     wjjw: [],
@@ -49,6 +50,9 @@ Component({
     },
 
     attached: function () {
+      this.setData({
+        openId:app.globalData.openId
+      })
       var that = this;
       var timestamp = Date.parse(new Date());
       var date2 = new Date(timestamp);
@@ -236,6 +240,7 @@ Component({
 
       var that = this;
       var formData = e.detail.value;
+      console.log(formData)
       var url = "";
 
       console.log(formData);

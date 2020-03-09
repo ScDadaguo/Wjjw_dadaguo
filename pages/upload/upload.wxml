@@ -103,6 +103,10 @@
     </view>
   </view>
 
+  <input name="openId"  hidden="true" value="{{openId}}"></input>
+
+
+
   <view class="cu-bar bg-white margin-top">
     <view class="action">
       实体账单照片上传
@@ -134,6 +138,7 @@
     <view class="title">其他备注</view>
     <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaBInput" placeholder="有备注就写点备注吧！" name="other" value="{{wjjw.other}}" ></textarea>
   </view>
+  
 
 <button class="cu-btn block bg-blue margin-tb-sm lg" form-type="submit">
     <text class="cuIcon-upload"></text> 添加账单</button>

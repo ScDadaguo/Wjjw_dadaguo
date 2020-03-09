@@ -17,6 +17,9 @@
     </picker>
   </view>
 
+
+ <input name="openId"  hidden="true" value="{{openId}}"></input>
+ 
   <view class="cu-form-group">
     <view class="title">工作地点</view>
     <input placeholder="请填写工作地点" value="{{wjjw.workPlace}}" name="workPlace"></input>
