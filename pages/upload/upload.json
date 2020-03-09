@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "i-button": "../../dist/button/index",
+    "i-cell-group": "../../dist/cell-group/index",
+    "i-cell": "../../dist/cell/index",
+    "list": "../list/list",
+    "upload": "../upload/upload",
+    "about": "../about/home/home"
+  },
+  "component": true
+}

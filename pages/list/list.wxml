@@ -1,0 +1,124 @@
+<!--pages/list/list.wxml-->
+
+<scroll-view scroll-y="{{modalName==null}}" class="page {{modalName!=null?'show':''}}">
+
+  <view class="cu-bar bg-white solid-bottom margin-top">
+    <view class="action">
+      <text class="cuIcon-title text-blue "></text> 全部账单
+    </view>
+    <view class="action">
+      <button class="cu-btn bg-blue shadow" bindtap="showModal" data-target="menuModal">设置</button>
+    </view>
+  </view>
+  <view class="cu-modal {{modalName=='menuModal'?'show':''}}" bindtap="hideModal">
+    <view class="cu-dialog" catchtap>
+      <scroll-view scroll-y style="height:300rpx">
+        <view class="cu-list menu text-left solid-top">
+          <view class="cu-item">
+            <view class="content">
+              <text class="text-grey">短边框</text>
+            </view>
+            <view class="action">
+              <switch bindchange="menuBorder"></switch>
+            </view>
+          </view>
+          <view class="cu-item">
+            <view class="content">
+              <text class="text-grey">箭头</text>
+            </view>
+            <view class="action">
+              <switch bindchange="menuArrow"></switch>
+            </view>
+          </view>
+          <view class="cu-item">
+            <view class="content">
+              <text class="text-grey">卡片</text>
+            </view>
+            <view class="action">
+              <switch bindchange="menuCard"></switch>
+            </view>
+          </view>
+          <view class="cu-item">
+            <view class="content">
+              <text class="text-grey">短边框</text>
+            </view>
+            <view class="action">
+              <switch bindchange="menuBorder"></switch>
+            </view>
+          </view>
+          <view class="cu-item">
+            <view class="content">
+              <text class="text-grey">箭头</text>
+            </view>
+            <view class="action">
+              <switch bindchange="menuArrow"></switch>
+            </view>
+          </view>
+          <view class="cu-item">
+            <view class="content">
+              <text class="text-grey">卡片</text>
+            </view>
+            <view class="action">
+              <switch bindchange="menuCard"></switch>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <view class="cu-list menu {{menuBorder?'sm-border':''}} {{menuCard?'card-menu margin-top':''}}">
+    <block>
+      <view class="cu-item {{menuArrow?'arrow':''}}">
+        <view class="content">
+          <view class="zg">
+            <view style="flex:1;">
+              <text class="cuIcon-all text-blue"></text>
+              <text class="text-grey" space="nbsp">日期</text>
+            </view>
+            <view style="flex:1;">
+              <text class="cuIcon-all text-blue"></text>
+              <text class="text-grey" space="nbsp">型号</text>
+            </view>
+            <view style="flex:1;">
+              <text class="cuIcon-all text-blue"></text>
+              <text class="text-grey" space="nbsp">地点</text>
+            </view>
+            <view style="flex:1;">
+              <text class="cuIcon-all text-blue"></text>
+              <text class="text-grey" space="nbsp">时长</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+    <block wx:for="{{list}}">
+      <view class="cu-item {{menuArrow?'arrow':''}}" bindtap="showDeatil" data-id="{{item.id}}" data-index="{{index}}">
+        <view class="content">
+          <view class="zg">
+            <view style="flex:1;">
+              <!-- <text class="text-grey" space="nbsp">{{item.workDate}}</text> -->
+              <text class="text-grey" space="nbsp">{{item.workDate}}</text>
+            </view>
+
+            <view style="flex:1;">
+              <text class="text-grey" space="nbsp">{{item.workPlace}}</text>
+            </view>
+
+            <view style="flex:1;">
+              <text class="text-grey" space="nbsp">{{item.workPlace}}</text>
+            </view>
+
+            <view style="flex:1;">
+              <text class="text-grey" space="nbsp">{{item.workHours}}小时</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+
+  </view>
+
+</scroll-view>

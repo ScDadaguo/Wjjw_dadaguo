@@ -1,0 +1,42 @@
+<list wx:if="{{PageCur=='list'}}"></list>
+<upload wx:if="{{PageCur=='upload'}}"></upload>
+<about wx:if="{{PageCur=='about'}}"></about>
+
+
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action" bindtap="NavChange" data-cur="list">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/basics{{PageCur=='list'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='list'?'text-blue':'text-gray'}}">明细</view>
+  </view>
+
+
+
+
+
+  <view class="action" bindtap="NavChange" data-cur="upload">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/component{{PageCur=='upload'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='upload'?'text-blue':'text-gray'}}">记账</view>
+  </view>
+
+
+
+
+  <view class="action" bindtap="NavChange" data-cur="plugin">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/plugin{{PageCur=='plugin'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='plugin'?'text-blue':'text-gray'}}">扩展</view>
+  </view>
+
+  
+  <view class="action" bindtap="NavChange" data-cur="about">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/about{{PageCur=='about'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='about'?'text-blue':'text-gray'}}">关于</view>
+  </view>
+</view>

@@ -1,0 +1,153 @@
+<scroll-view scroll-y="{{modalName==null}}" class="page {{modalName!=null?'show':''}}">
+
+ <form bindsubmit="formSubmit" bindreset="formReset">
+   <view class="cu-form-group">
+    <view class="title">日期</view>
+    <input disabled="false" placeholder="{{wjjw.workDate}}" name="workDate" disabled="false" value="{{wjjw.workDate}}"  class="guohao_right" placeholder-class="guohao_right" ></input>
+  </view>
+
+    <view class="cu-form-group">
+    <view class="title">机型</view>
+    <input disabled="false" value="{{wjjw.machineName}}" name="machineName" disabled="false" class="guohao_right" ></input>
+  </view>
+
+  <view class="cu-form-group">
+    <view class="title">工作地点</view>
+    <input disabled="false" value="{{wjjw.workPlace}}" name="workPlace" disabled="false" class="guohao_right" ></input>
+  </view>
+
+
+  <view class="cu-form-group">
+    <view class="title">开始时间</view>
+    <i-cell>
+      <input slot="footer" type="digit" value="{{wjjw.startTime}}" name="startTime" class="guohao_right"  />
+    </i-cell>
+  
+  </view>
+
+  
+  <view class="cu-form-group">
+    <view class="title">结束时间</view>
+    <i-cell>
+      <input slot="footer" type="digit" value="{{wjjw.endTime}}" name="endTime" class="guohao_right"
+      disabled="false"/>
+    </i-cell>
+  </view>
+
+  <view class="cu-form-group">
+    <view class="title">工作时长</view>
+    <i-cell>
+      <input slot="footer" type="digit" value="{{wjjw.workHours}}" name="workHours" class="guohao_right"
+      disabled="false"/>
+    </i-cell>
+    <view class="cu-capsule radius">
+      <view class="cu-tag bg-blue">
+        小时
+      </view>
+    </view>
+  </view>
+
+
+
+  <view class="cu-form-group">
+    <view class="title">单价</view>
+    <i-cell>
+      <input slot="footer" type="digit" value="{{wjjw.unitPrice}}"  name="unitPrice" class="guohao_right"
+      disabled="false"/>
+    </i-cell>
+    <view class="cu-capsule radius">
+      <view class="cu-tag bg-blue">
+        元/小时
+      </view>
+    </view>
+  </view>
+
+  <view class="cu-form-group">
+    <view class="title">板车趟数</view>
+    <i-cell>
+      <input slot="footer" type="digit" value="{{wjjw.flatcarCount}}" name="flatcarCount"  class="guohao_right"
+      disabled="false"/>
+    </i-cell>
+    <view class="cu-capsule radius">
+      <view class="cu-tag bg-blue">
+        趟
+      </view>
+    </view>
+  </view>
+
+  <view class="cu-form-group">
+    <view class="title" >板车费</view>
+    <i-cell>
+      <input slot="footer" type="digit" value="{{wjjw.flatcarFee}}"name="flatcarFee"  class="guohao_right"  disabled="false"/>
+    </i-cell>
+    <view class="cu-capsule radius">
+      <view class="cu-tag bg-blue">
+        元
+      </view>
+    </view>
+  </view>
+
+  <view class="cu-form-group">
+    <view class="title">合计金额</view>
+    <i-cell>
+      <input slot="footer" type="digit" value="{{wjjw.totalSum}}"  name="totalSum"  disabled="false" class="guohao_right"  />
+    </i-cell>
+    <view class="cu-capsule radius">
+      <view class="cu-tag bg-blue">
+        元
+      </view>
+    </view>
+  </view>
+
+  <view class="cu-bar bg-white margin-top">
+		<view class="action">
+			账单图片
+		</view>
+		<view class="action">
+			{{imgList.length}}/4
+		</view>
+	</view>
+
+<!-- 
+	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+			<view class="bg-img"  bindtap="ViewImage" >
+				<image src='https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=308075844,2342728414&fm=26&gp=0.jpg' mode='aspectFill'></image>
+				<view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+					<text class="cuIcon-close"></text>
+				</view>
+			</view>
+
+		</view>
+	</view> -->
+
+  <view class="cu-form-group">
+    <view class="grid col-4 grid-square flex-sub">
+
+      <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+        <image src='{{imgList[index]}}' mode='aspectFill'></image>
+      </view>
+      
+
+    </view>
+  </view>
+
+
+  <view class="cu-form-group align-start">
+    <view class="title">其他备注</view>
+    <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaBInput" placeholder="有备注就写点备注吧！" name="other" value="{{wjjw.orange}}" ></textarea>
+  </view>
+
+
+</form>
+
+  <view class="padding-xl">
+    <button class="cu-btn block bg-blue margin-tb-sm lg" bindtap="updateWjjw">
+    <text class="cuIcon-loading2 iconfont-spin"></text> 编辑账单</button>
+
+    <button class="cu-btn block bg-red margin-tb-sm lg" bindtap="deleteWjjw">
+    <text class="cuIcon-loading2 iconfont-spin"></text> 删除账单</button>
+  </view>
+
+
+</scroll-view>
