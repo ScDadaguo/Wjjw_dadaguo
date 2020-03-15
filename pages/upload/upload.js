@@ -11,10 +11,10 @@ Component({
     PageCur: 'component',
     id: '',
     wjjw: [],
-    addUrlWithImage: "http://127.0.0.1:8081/insertWjjw",
-    addUrlWithoutImage: "http://127.0.0.1:8081/saveWjjw",
-    modfiyUrlWithImage: "http://127.0.0.1:8081/updateWjjw",
-    modfiyUrlWithoutImage: "http://127.0.0.1:8081/updateWithoutImageWjjw",
+    addUrlWithImage: "http://119.23.56.130:8081/insertWjjw",
+    addUrlWithoutImage: "http://119.23.56.130:8081/saveWjjw",
+    modfiyUrlWithImage: "http://119.23.56.130:8081/updateWjjw",
+    modfiyUrlWithoutImage: "http://119.23.56.130:8081/updateWithoutImageWjjw",
 
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
@@ -249,7 +249,7 @@ Component({
       //如果没有图片
       if (that.data.imgList.length == 0) {
         wx.request({
-          url: "http://127.0.0.1:8081/saveWjjw",
+          url: "http://119.23.56.130:8081/saveWjjw",
           data: JSON.stringify(formData),
           method: "POST",
           header: {

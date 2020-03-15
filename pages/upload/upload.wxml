@@ -10,7 +10,7 @@
 
   <view class="cu-form-group margin-top">
     <view class="title">机型</view>
-    <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}" name="machineName">
+    <picker bindchange="PickerChange" value="{{index?picker[index]:'选择机型'}}" range="{{picker}}" name="machineName">
       <view class="picker">
         {{index?picker[index]:'选择机型'}}
       </view>

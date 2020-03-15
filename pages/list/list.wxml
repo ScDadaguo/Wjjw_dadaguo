@@ -103,7 +103,7 @@
             </view>
 
             <view style="flex:1;">
-              <text class="text-grey" space="nbsp">{{item.workPlace}}</text>
+              <text class="text-grey" space="nbsp">{{item.machineName}}</text>
             </view>
 
             <view style="flex:1;">

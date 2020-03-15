@@ -6,10 +6,10 @@ Page({
     PageCur: 'component',
     id: '',
     wjjw: [],
-    addUrlWithImage: "http://127.0.0.1:8081/insertWjjw",
-    addUrlWithoutImage:"http://127.0.0.1:8081/saveWjjw",
-    modfiyUrlWithImage: "http://127.0.0.1:8081/updateWjjw",
-modfiyUrlWithoutImage:"http://127.0.0.1:8081/updateWithoutImageWjjw",
+    addUrlWithImage: "http://119.23.56.130:8081/insertWjjw",
+    addUrlWithoutImage:"http://119.23.56.130:8081/saveWjjw",
+    modfiyUrlWithImage: "http://119.23.56.130:8081/updateWjjw",
+modfiyUrlWithoutImage:"http://119.23.56.130:8081/updateWithoutImageWjjw",
 
 
 
@@ -179,7 +179,7 @@ modfiyUrlWithoutImage:"http://127.0.0.1:8081/updateWithoutImageWjjw",
   
     if (that.data.id != undefined) {
       wx.request({
-        url: 'http://127.0.0.1:8081/querywjjwById?id=' + this.data.id,
+        url: 'http://119.23.56.130:8081/querywjjwById?id=' + this.data.id,
         method: 'get',
         data: {},
         success: function (res) {
@@ -202,7 +202,7 @@ modfiyUrlWithoutImage:"http://127.0.0.1:8081/updateWithoutImageWjjw",
             }
             if (wjjw.localPath !=null) {
               console.log(wjjw.localPath);
-              var imgUrl="http://127.0.0.1:8081"+wjjw.localPath;
+              var imgUrl="http://119.23.56.130:8081"+wjjw.localPath;
               that.setData({
                 imgList: [imgUrl]
               })
@@ -252,7 +252,7 @@ modfiyUrlWithoutImage:"http://127.0.0.1:8081/updateWithoutImageWjjw",
         url=that.data.modfiyUrlWithoutImage;
       }
       wx.request({
-        url: "http://127.0.0.1:8081/saveWjjw",
+        url: "http://119.23.56.130:8081/saveWjjw",
       data:JSON.stringify(formData),
       method:"POST",
       header:{
