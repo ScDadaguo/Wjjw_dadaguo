@@ -18,11 +18,22 @@
   </view>
 
 
- <input name="openId"  hidden="true" value="{{openId}}"></input>
- 
-  <view class="cu-form-group">
+
+  <!-- <view class="cu-form-group">
     <view class="title">工作地点</view>
     <input placeholder="请填写工作地点" value="{{wjjw.workPlace}}" name="workPlace"></input>
+  </view> -->
+
+  <view class="cu-form-group">
+    <view class="title">工作地点</view>
+    <i-cell>
+    <input slot="footer"  placeholder="请填写工作地点" value="{{wjjw.workPlace}}" name="workPlace" ></input>
+     </i-cell>
+     <view class="cu-capsule radius">
+      <view class="cu-tag bg-blue">
+        地点
+      </view>
+    </view>
   </view>
 
 

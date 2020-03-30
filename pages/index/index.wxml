@@ -1,6 +1,7 @@
 <list wx:if="{{PageCur=='list'}}"></list>
 <upload wx:if="{{PageCur=='upload'}}"></upload>
 <about wx:if="{{PageCur=='about'}}"></about>
+<chart wx:if="{{PageCur=='chart'}}"></chart>
 
 
 <view class="cu-bar tabbar bg-white shadow foot">
@@ -25,11 +26,11 @@
 
 
 
-  <view class="action" bindtap="NavChange" data-cur="plugin">
+  <view class="action" bindtap="NavChange" data-cur="chart">
     <view class='cuIcon-cu-image'>
-      <image src="/images/tabbar/plugin{{PageCur=='plugin'?'_cur':''}}.png"></image>
+      <image src="/images/tabbar/plugin{{PageCur=='chart'?'_cur':''}}.png"></image>
     </view>
-    <view class="{{PageCur=='plugin'?'text-blue':'text-gray'}}">扩展</view>
+    <view class="{{PageCur=='chart'?'text-blue':'text-gray'}}">图表</view>
   </view>
 
   

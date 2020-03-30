@@ -1,3 +1,4 @@
+<!-- <scroll-view scroll-y="{{modalName==null}}" class="page {{modalName!=null?'show':''}}"> -->
 <form bindsubmit="formSubmit" bindreset="formReset">
   <view class="cu-form-group">
     <view class="title">日期选择</view>
@@ -15,11 +16,6 @@
         {{index?picker[index]:'选择机型'}}
       </view>
     </picker>
-  </view>
-
-  <view class="cu-form-group">
-    <view class="title">工作地点</view>
-    <input placeholder="请填写工作地点" value="{{form.workPlace}}" name="workPlace" ></input>
   </view>
 
 
@@ -42,9 +38,26 @@
   </view>
 
   <view class="cu-form-group">
+    <view class="title">工作地点</view>
+    <i-cell>
+    <input slot="footer"  placeholder="请填写工作地点" value="{{form.workPlace}}" name="workPlace" ></input>
+     </i-cell>
+     <view class="cu-capsule radius">
+      <view class="cu-tag bg-blue">
+        地点
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+
+  <view class="cu-form-group">
     <view class="title">工作时长</view>
     <i-cell>
-      <input slot="footer" type="digit" placeholder="" value="{{form.workHours}}" name="workHours" />
+      <input slot="footer" type="digit" placeholder="请输入工作时长" value="{{form.workHours}}" name="workHours" />
     </i-cell>
     <view class="cu-capsule radius">
       <view class="cu-tag bg-blue">
@@ -58,7 +71,7 @@
   <view class="cu-form-group">
     <view class="title">单价</view>
     <i-cell>
-      <input slot="footer" type="digit" placeholder=""  value="{{form.unitPrice}}" name="unitPrice" />
+      <input slot="footer" type="digit" placeholder="请输入单价"  value="{{form.unitPrice}}" name="unitPrice" />
     </i-cell>
     <view class="cu-capsule radius">
       <view class="cu-tag bg-blue">
@@ -70,7 +83,7 @@
   <view class="cu-form-group">
     <view class="title">板车趟数</view>
     <i-cell>
-      <input slot="footer" type="digit" placeholder="" value="{{form.flatcarCount}}" name="flatcarCount" />
+      <input slot="footer" type="digit" placeholder="请输入板车趟数" value="{{form.flatcarCount}}" name="flatcarCount" />
     </i-cell>
     <view class="cu-capsule radius">
       <view class="cu-tag bg-blue">
@@ -82,7 +95,7 @@
   <view class="cu-form-group">
     <view class="title">板车费</view>
     <i-cell>
-      <input slot="footer" type="digit" placeholder="" value="{{form.flatcarFee}}" name="flatcarFee" />
+      <input slot="footer" type="digit" placeholder="请输入板车费" value="{{form.flatcarFee}}" name="flatcarFee" />
     </i-cell>
     <view class="cu-capsule radius">
       <view class="cu-tag bg-blue">
@@ -94,7 +107,7 @@
   <view class="cu-form-group">
     <view class="title">合计金额</view>
     <i-cell>
-      <input slot="footer" type="digit" placeholder="" value="{{form.totalSum}}" name="totalSum" />
+      <input slot="footer" type="digit" placeholder="请输入合计金额" value="{{form.totalSum}}" name="totalSum" />
     </i-cell>
     <view class="cu-capsule radius">
       <view class="cu-tag bg-blue">
@@ -131,6 +144,7 @@
       </view>
 
     </view>
+    
   </view>
 
 
@@ -139,13 +153,13 @@
     <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaBInput" placeholder="有备注就写点备注吧！" name="other" value="{{wjjw.other}}" ></textarea>
   </view>
   
-
+<view class="padding-bottom-xl">
 <button class="cu-btn block bg-blue margin-tb-sm lg" form-type="submit">
     <text class="cuIcon-upload"></text> 添加账单</button>
-
-  <button class="cu-btn lines-blue round lg shadow" form-type="submit">
-    <text class="cuIcon-upload"></text> 添加账单</button>
+</view>
+  <!-- <button class="cu-btn lines-blue round lg shadow" form-type="submit">
+    <text class="cuIcon-upload"></text> 添加账单</button> -->
 
     
 </form>
-
+<!-- </scroll-view> -->

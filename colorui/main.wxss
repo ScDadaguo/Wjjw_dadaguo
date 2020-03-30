@@ -3260,7 +3260,7 @@ scroll-view.cu-steps .cu-item {
 }
 
 .padding-bottom-xl {
-	padding-bottom: 50rpx;
+	padding-bottom: 100rpx;
 }
 
 .padding-left-xs {

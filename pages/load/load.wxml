@@ -1,14 +1,15 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
+  <!-- <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
-  </view>
+  </view> -->
+  <image src="/images/shangbiao2.png" class="png" mode="widthFix"></image>
   <view class="container">
-  <button class="ctu-btn bg-blue round shadow" bindtap="bindViewTap">go go go!</button>
+  <button class="ctu-btn bg-blue round shadow" bindtap="bindViewTap">Let us start !</button>
 </view>
 </view>
 

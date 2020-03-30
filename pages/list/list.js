@@ -27,7 +27,7 @@ Component({
       console.log("在组件实例刚刚被创建时执行")
       var that = this;
       wx.request({
-        url: 'http://119.23.56.130:8081/listWjjw?openId='+app.globalData.openId,
+        url: app.globalData.ipAdress+'/listWjjw?openId='+app.globalData.openId,
         method: 'get',
         data: {},
         success: function (res) {
@@ -76,7 +76,7 @@ Component({
         success: function (sm) {
           if (sm.confirm) {
             wx.request({
-              url: 'http://119.23.56.130:8081/deleteWjjw',
+              url: app.globalData.ipAdress+'/deleteWjjw',
               data: {
                 "id": e.target.dataset.id
               },

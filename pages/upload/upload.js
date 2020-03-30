@@ -11,10 +11,10 @@ Component({
     PageCur: 'component',
     id: '',
     wjjw: [],
-    addUrlWithImage: "http://119.23.56.130:8081/insertWjjw",
-    addUrlWithoutImage: "http://119.23.56.130:8081/saveWjjw",
-    modfiyUrlWithImage: "http://119.23.56.130:8081/updateWjjw",
-    modfiyUrlWithoutImage: "http://119.23.56.130:8081/updateWithoutImageWjjw",
+    addUrlWithImage: app.globalData.ipAdress+"/insertWjjw",
+    addUrlWithoutImage: app.globalData.ipAdress+"/saveWjjw",
+    modfiyUrlWithImage: app.globalData.ipAdress+"/updateWjjw",
+    modfiyUrlWithoutImage: app.globalData.ipAdress+"/updateWithoutImageWjjw",
 
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
@@ -22,8 +22,8 @@ Component({
     index: null,
     picker: ['120', '小微挖', '小55'],
 
-    startTime: '08:00',
-    endTime: '16:00',
+    startTime: '00:00',
+    endTime: '00:00',
     date: '',
     imgList: [],
     date_flag: false,
@@ -236,20 +236,29 @@ Component({
         return false
       }
 
-
-
+      if (this.data.startTime_flag==false){
+        wx.showModal({
+          title: '请填写开始时间'
+        })
+        return false
+      }
+      if (this.data.endTime_flag == false) {
+        wx.showModal({
+          title: '请填写结束时间'
+        })
+        return false
+      }
+    
       var that = this;
       var formData = e.detail.value;
       console.log(formData)
       var url = "";
-
-      console.log(formData);
       console.log(url);
       console.log(that.data.imgList.length);
       //如果没有图片
       if (that.data.imgList.length == 0) {
         wx.request({
-          url: "http://119.23.56.130:8081/saveWjjw",
+          url: app.globalData.ipAdress+"/saveWjjw",
           data: JSON.stringify(formData),
           method: "POST",
           header: {

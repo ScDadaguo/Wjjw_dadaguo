@@ -54,35 +54,35 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  },
-  getOpenIdTap: function () {
-    var that = this;
-    wx.login({
-      success: function (res) {
-        wx.request({
-          //获取openid接口  
-          url: 'https://api.weixin.qq.com/sns/jscode2session',
-          data: {
-            appid: 'wx6266ee9fca6eec27',
-            secret: '99eed9b0170afeb9facaa0bd6674f684',
-            js_code: res.code,
-            grant_type: 'authorization_code'
-          },
-          method: 'GET',
-          success: function (res) {
-            console.log(res.data)
-            OPEN_ID = res.data.openid;//获取到的openid  
-            SESSION_KEY = res.data.session_key;//获取到session_key  
-            // console.log(OPEN_ID.length)
-            // console.log(SESSION_KEY.length)
-            // that.setData({
-            //   openid: res.data.openid.substr(0, 10) + '********' + res.data.openid.substr(res.data.openid.length - 8, res.data.openid.length),
-            //   session_key: res.data.session_key.substr(0, 8) + '********' + res.data.session_key.substr(res.data.session_key.length - 6, res.data.session_key.length)
-            // })
-          }
-        })
-      }
-    })
   }
+  // getOpenIdTap: function () {
+  //   var that = this;
+  //   wx.login({
+  //     success: function (res) {
+  //       wx.request({
+  //         //获取openid接口  
+  //         url: 'https://api.weixin.qq.com/sns/jscode2session',
+  //         data: {
+  //           appid: 'wx6266ee9fca6eec27',
+  //           secret: '99eed9b0170afeb9facaa0bd6674f684',
+  //           js_code: res.code,
+  //           grant_type: 'authorization_code'
+  //         },
+  //         method: 'GET',
+  //         success: function (res) {
+  //           console.log(res.data)
+  //           OPEN_ID = res.data.openid;//获取到的openid  
+  //           SESSION_KEY = res.data.session_key;//获取到session_key  
+  //           // console.log(OPEN_ID.length)
+  //           // console.log(SESSION_KEY.length)
+  //           // that.setData({
+  //           //   openid: res.data.openid.substr(0, 10) + '********' + res.data.openid.substr(res.data.openid.length - 8, res.data.openid.length),
+  //           //   session_key: res.data.session_key.substr(0, 8) + '********' + res.data.session_key.substr(res.data.session_key.length - 6, res.data.session_key.length)
+  //           // })
+  //         }
+  //       })
+  //     }
+  //   })
+  // }
  
 })

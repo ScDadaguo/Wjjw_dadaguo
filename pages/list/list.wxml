@@ -73,19 +73,19 @@
         <view class="content">
           <view class="zg">
             <view style="flex:1;">
-              <text class="cuIcon-all text-blue"></text>
+              <text class="cuIcon-tag  text-blue"></text>
               <text class="text-grey" space="nbsp">日期</text>
             </view>
             <view style="flex:1;">
-              <text class="cuIcon-all text-blue"></text>
+              <text class="cuIcon-deliver  text-blue"></text>
               <text class="text-grey" space="nbsp">型号</text>
             </view>
             <view style="flex:1;">
-              <text class="cuIcon-all text-blue"></text>
+              <text class="cuIcon-home  text-blue"></text>
               <text class="text-grey" space="nbsp">地点</text>
             </view>
             <view style="flex:1;">
-              <text class="cuIcon-all text-blue"></text>
+              <text class="cuIcon-time  text-blue"></text>
               <text class="text-grey" space="nbsp">时长</text>
             </view>
           </view>

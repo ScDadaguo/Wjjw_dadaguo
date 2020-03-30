@@ -1,5 +1,6 @@
 {
   "pages": [
+      "pages/line/line",
     "pages/load/load",
     "pages/index/index",
     "pages/logs/logs",
@@ -11,6 +12,7 @@
     "pages/about/about/about",
     "pages/about/log/log",
     "pages/about/test/test"
+  
   ],
   "window": {
     "backgroundTextStyle": "light",

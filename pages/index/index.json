@@ -3,5 +3,6 @@
     "list": "../list/list",
     "upload":"../upload/upload",
     "about":"../about/home/home"
+    
   }
 }

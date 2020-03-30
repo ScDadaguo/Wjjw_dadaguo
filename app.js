@@ -18,7 +18,9 @@ App({
         var appId = 'wx6266ee9fca6eec27';
         var secret = '320924f0245d209874f583a1f2e1b511';
         wx.request({
-          url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appId + '&secret=' + secret + '&js_code=' + code + '&grant_type=authorization_code',
+          // url: 'https://api.weixin.qq.com/sns/jscode2session?appid=' + appId + '&secret=' + secret + '&js_code=' + code + '&grant_type=authorization_code'
+          url:that.globalData.ipAdress +"/login?code="+code
+          ,
           data: {},
           header: {
             'content-type': 'json'
@@ -60,7 +62,8 @@ App({
   },
   globalData: {
     userInfo: null,
-    openId: null
+    openId: null,
+    ipAdress:'https://www.foxcii.com'
   },
   
 })

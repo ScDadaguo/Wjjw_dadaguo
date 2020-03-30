@@ -6,13 +6,10 @@ Page({
     PageCur: 'component',
     id: '',
     wjjw: [],
-    addUrlWithImage: "http://119.23.56.130:8081/insertWjjw",
-    addUrlWithoutImage:"http://119.23.56.130:8081/saveWjjw",
-    modfiyUrlWithImage: "http://119.23.56.130:8081/updateWjjw",
-modfiyUrlWithoutImage:"http://119.23.56.130:8081/updateWithoutImageWjjw",
-
-
-
+    addUrlWithImage: app.globalData.ipAdress+"/insertWjjw",
+    addUrlWithoutImage:app.globalData.ipAdress+"/saveWjjw",
+    modfiyUrlWithImage: app.globalData.ipAdress+"/updateWjjw",
+modfiyUrlWithoutImage:app.globalData.ipAdress+"/updateWithoutImageWjjw",
 
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
@@ -179,7 +176,7 @@ modfiyUrlWithoutImage:"http://119.23.56.130:8081/updateWithoutImageWjjw",
   
     if (that.data.id != undefined) {
       wx.request({
-        url: 'http://119.23.56.130:8081/querywjjwById?id=' + this.data.id,
+        url: app.globalData.ipAdress+'/querywjjwById?id=' + this.data.id,
         method: 'get',
         data: {},
         success: function (res) {
@@ -202,7 +199,7 @@ modfiyUrlWithoutImage:"http://119.23.56.130:8081/updateWithoutImageWjjw",
             }
             if (wjjw.localPath !=null) {
               console.log(wjjw.localPath);
-              var imgUrl="http://119.23.56.130:8081"+wjjw.localPath;
+              var imgUrl=app.globalData.ipAdress+wjjw.localPath;
               that.setData({
                 imgList: [imgUrl]
               })
@@ -225,34 +222,14 @@ modfiyUrlWithoutImage:"http://119.23.56.130:8081/updateWithoutImageWjjw",
     var that = this;
     var formData = e.detail.value;
     var url ="";
-    //如果是新增账单
-    // if (that.data.id != undefined) {
-    //   formData.id = that.data.id;
-    //   url = that.data.modfiyUrl;
-    // }
-    // //如果是编辑账单
-    // else{
-    //   url = that.data.modfiyUrlWithImage;
-    // }
-    formData.workDate ="2018-12-25";
-    formData.startTime="08:00";
-    formData.endTime="16:00";
     console.log(formData);
     console.log(url);
     console.log(that.data.imgList.length);
+    formData.id = that.data.id;
     //如果没有图片
     if(that.data.imgList.length==0){
-      //如果是编辑账单
-      if (that.data.id != undefined) {
-        formData.id = that.data.id;
-        url = that.data.modfiyUrlWithoutImage;
-      }
-      //如果是新增账单
-      else{
-        url=that.data.modfiyUrlWithoutImage;
-      }
       wx.request({
-        url: "http://119.23.56.130:8081/saveWjjw",
+        url: that.data.modfiyUrlWithoutImage,
       data:JSON.stringify(formData),
       method:"POST",
       header:{
@@ -260,6 +237,7 @@ modfiyUrlWithoutImage:"http://119.23.56.130:8081/updateWithoutImageWjjw",
       },
       success:function(res){
         var resut=res.data.success;
+        console.log(res)
         var toastText="操作成功！"
         if(resut!=true){
           toastText="操作失败！"+res.data.errMsg;

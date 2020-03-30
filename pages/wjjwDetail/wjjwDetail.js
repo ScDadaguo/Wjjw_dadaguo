@@ -139,7 +139,7 @@ Page({
   onShow: function() {
     var that = this;
     wx.request({
-      url: 'http://119.23.56.130:8081/querywjjwById?id=' + this.data.id,
+      url: app.globalData.ipAdress+'/querywjjwById?id=' + this.data.id,
       method: 'get',
       data: {},
       success: function (res) {
@@ -156,7 +156,7 @@ Page({
           console.log(wjjw.localPath);
           if(wjjw.localPath!=null){
             console.log(wjjw.localPath);
-            var imgUrl="http://119.23.56.130:8081"+wjjw.localPath;
+            var imgUrl=app.globalData.ipAdress+wjjw.localPath;
             that.setData({
               imgList: [imgUrl]
             })  
@@ -177,7 +177,7 @@ Page({
       success: function (sm) {
         if (sm.confirm) {
           wx.request({
-            url: 'http://119.23.56.130:8081/deleteWjjw',
+            url: app.globalData.ipAdress+'/deleteWjjw',
             data: {
               "id": that.data.id
             },
